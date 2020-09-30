@@ -4,6 +4,7 @@ import META from './util/meta.js'
 import TEMPLATE from './util/template.js'
 import valueToMsg from './util/maker.js'
 import msgToValue from './util/parser.js'
+import deepCopy from './util/deepCopy.js'
 
 class App extends Component {
 
@@ -118,7 +119,7 @@ class App extends Component {
         const v = e.target.value
         this.setState({
             ...this.state,
-            values: TEMPLATE[v]
+            values: deepCopy(TEMPLATE[v])
         })
     }
 
